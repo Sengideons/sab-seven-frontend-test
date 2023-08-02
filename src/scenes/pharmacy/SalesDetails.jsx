@@ -18,7 +18,7 @@ const SalesDetails = () => {
   const [itemdata, itemdatachange] = useState({});
 
   useEffect(() => {
-      fetch("https://crazy-cod-sweater.cyclic.cloud/SalesInvoice/" + medid).then((res) => {
+      fetch("http://localhost:8000/SalesInvoice/" + medid).then((res) => {
           return res.json();
       }).then((resp) => {
           itemdatachange(resp);

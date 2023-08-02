@@ -18,7 +18,7 @@ const EmployeeDashboard = () =>{
 
     useEffect(() => {
         // Fetch data from the JSON server
-        axios.get('https://crazy-cod-sweater.cyclic.cloud/AllMedicines')
+        axios.get('http://localhost:8000/AllMedicines')
           .then(response => {
             const medicines = response.data;
     
@@ -65,7 +65,7 @@ const EmployeeDashboard = () =>{
   useEffect(() => {
     const fetchMedicines = async () => {
       try {
-        const response = await fetch('https://crazy-cod-sweater.cyclic.cloud/AllMedicines');
+        const response = await fetch('http://localhost:8000/AllMedicines');
         if (!response.ok) {
           throw new Error('Failed to fetch medication data.');
         }

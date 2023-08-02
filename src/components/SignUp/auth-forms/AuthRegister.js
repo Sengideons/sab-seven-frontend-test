@@ -75,7 +75,7 @@ const EmployeeAuthRegister = () => {
         let regobj = {username, fullname, email, password}
         if (IsValidate()) {
         //console.log(regobj)
-        fetch("https://crazy-cod-sweater.cyclic.cloud/user", {
+        fetch("http://localhost:8000/user", {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(regobj)

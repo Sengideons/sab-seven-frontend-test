@@ -31,7 +31,7 @@ const SalesRecords = () =>{
   
   const Removefunction = (id) => {
     if (window.confirm('Are sure you want to delete this item?')) {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/SalesInvoice/" + id, {
+        fetch("http://localhost:8000/SalesInvoice/" + id, {
             method: "DELETE"
         }).then((res) => {
             toast.success('Sales Record deleted successfully.')
@@ -44,7 +44,7 @@ const SalesRecords = () =>{
   
   
     useEffect(()=>{
-      fetch("https://crazy-cod-sweater.cyclic.cloud/SalesInvoice").then((res)=>{
+      fetch("http://localhost:8000/SalesInvoice").then((res)=>{
         return res.json();
       }).then((resp)=>{
           transactiondatachange(resp);

@@ -17,7 +17,7 @@ const ClinicDashboard = () =>{
 
     useEffect(() => {
         // Fetch data from the JSON server
-        axios.get('https://crazy-cod-sweater.cyclic.cloud/AllMedicines')
+        axios.get('http://localhost:8000/AllMedicines')
           .then(response => {
             const medicines = response.data;
     

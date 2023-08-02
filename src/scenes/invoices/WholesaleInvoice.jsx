@@ -17,7 +17,7 @@ const WholesaleInvoice = () => {
 
   const handleFormSubmit = async (values) => {
     const whosaleInvoice=(values);
-    fetch("https://crazy-cod-sweater.cyclic.cloud/WholesaleInvoice", {
+    fetch("http://localhost:8000/WholesaleInvoice", {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(whosaleInvoice)
@@ -28,7 +28,7 @@ const WholesaleInvoice = () => {
                 toast.error('Failed :' + err.message);
             });
             
-            fetch("https://crazy-cod-sweater.cyclic.cloud/WholesaleItems", {
+            fetch("http://localhost:8000/WholesaleItems", {
               method: "POST",
               headers: { 'content-type': 'application/json' },
               body: JSON.stringify(values)

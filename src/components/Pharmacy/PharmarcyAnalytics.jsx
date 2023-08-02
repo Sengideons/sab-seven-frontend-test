@@ -9,7 +9,7 @@ const PharmacyAnalytics = () =>{
 
   useEffect(() => {
     // Fetch data from the JSON server
-    fetch('https://crazy-cod-sweater.cyclic.cloud/SalesInvoice')
+    fetch('http://localhost:8000/SalesInvoice')
       .then((response) => response.json())
       .then((data) => setSalesData(data))
       .catch((error) => console.error('Error fetching sales data:', error));

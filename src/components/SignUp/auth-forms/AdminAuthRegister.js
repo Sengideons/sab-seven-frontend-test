@@ -75,7 +75,7 @@ const AdminAuthRegister = () => {
         let regobj = {username, fullname, email, password}
         if (IsValidate()) {
         //console.log(regobj)
-        fetch("https://crazy-cod-sweater.cyclic.cloud/admin", {
+        fetch("http://localhost:8000/admin", {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(regobj)

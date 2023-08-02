@@ -18,7 +18,7 @@ const RetailInvoiceDetail = () => {
   const [transactiondata, transactiondatachange] = useState({});
 
   useEffect(() => {
-      fetch("https://crazy-cod-sweater.cyclic.cloud/RetailInvoice/" + retailinvoiceid).then((res) => {
+      fetch("http://localhost:8000/RetailInvoice/" + retailinvoiceid).then((res) => {
           return res.json();
       }).then((resp) => {
         transactiondatachange(resp);

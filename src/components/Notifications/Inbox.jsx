@@ -16,7 +16,7 @@ const Inbox = () =>{
     useEffect(() => {
         const fetchMedicines = async () => {
             try {
-                const response = await fetch('https://crazy-cod-sweater.cyclic.cloud/AllMedicines');
+                const response = await fetch('http://localhost:8000/AllMedicines');
                 if (!response.ok) {
                     throw new Error('Failed to fetch medication data.');
                 }

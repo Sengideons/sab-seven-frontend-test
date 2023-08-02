@@ -42,13 +42,13 @@ const AuthLogin = () => {
             const ProceedLogin = (e) => {
                 e.preventDefault();
                 if (validate()) {
-                    fetch("https://crazy-cod-sweater.cyclic.cloud/user?username=" + username) // Use the correct identifier field here
+                    fetch("http://localhost:8000/user?username=" + username) // Use the correct identifier field here
                         .then((res) => {
                             return res.json();
                         })
                         .then((resp) => {
                             if (resp.length === 0) { // Since it's an array of matching users, check the length
-                                fetch("https://crazy-cod-sweater.cyclic.cloud/admin?username=" + username) // Use the correct identifier field here
+                                fetch("http://localhost:8000/admin?username=" + username) // Use the correct identifier field here
                                     .then((res) => {
                                         return res.json();
                                     })

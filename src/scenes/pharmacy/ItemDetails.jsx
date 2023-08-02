@@ -14,7 +14,7 @@ const MedicineDetails = () => {
   const [itemdata, itemdatachange] = useState({});
 
   useEffect(() => {
-      fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines/" + medicineid).then((res) => {
+      fetch("http://localhost:8000/AllMedicines/" + medicineid).then((res) => {
           return res.json();
       }).then((resp) => {
           itemdatachange(resp);

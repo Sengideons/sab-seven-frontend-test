@@ -34,7 +34,7 @@ const SellMedicine = () => {
 
   useEffect(() => {
     axios
-      .get('https://crazy-cod-sweater.cyclic.cloud/AllMedicines')
+      .get('http://localhost:8000/AllMedicines')
       .then(response => {
         setMedicineOptions(response.data);
       })
@@ -136,7 +136,7 @@ function generateReceiptNumber() {
   
     // Send a POST request to the server to save the invoice
     axios
-      .post('https://crazy-cod-sweater.cyclic.cloud/SalesInvoice', invoice)
+      .post('http://localhost:8000/SalesInvoice', invoice)
       .then(response => {
         // Handle the response if needed
         toast.success("Medicine sold successfully!");
@@ -161,7 +161,7 @@ function generateReceiptNumber() {
         // Update the AllMedicines endpoint with the updated quantities
         updatedMedicineOptions.forEach(updatedMedicine => {
           axios
-          .put(`https://crazy-cod-sweater.cyclic.cloud/AllMedicines/${updatedMedicine.id}`, updatedMedicine)
+          .put(`http://localhost:8000/AllMedicines/${updatedMedicine.id}`, updatedMedicine)
             .then(response => {
               // Handle the response if needed
             })

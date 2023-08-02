@@ -11,7 +11,7 @@ const BarChart = ({ isDashboard = false }) => {
   //const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://crazy-cod-sweater.cyclic.cloud/WholesaleTransactions")
+    fetch("http://localhost:8000/WholesaleTransactions")
       .then((response) => response.json())
       .then((data) => {
         const chartData = data.map((transaction) => ({

@@ -7,7 +7,7 @@ const SalesOverview = () => {
 
   useEffect(() => {
     // Fetch sales data from the JSON Server API
-    axios.get('https://crazy-cod-sweater.cyclic.cloud/SalesInvoice')
+    axios.get('http://localhost:8000/SalesInvoice')
       .then(response => {
         setSalesData(response.data);
       })

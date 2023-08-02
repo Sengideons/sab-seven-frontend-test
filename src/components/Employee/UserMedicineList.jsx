@@ -35,7 +35,7 @@ const UserMedicineList = () =>{
   
   const Removefunction = (id) => {
     if (window.confirm('Are sure you want to delete this item?')) {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines/" + id, {
+        fetch("http://localhost:8000/AllMedicines/" + id, {
             method: "DELETE"
         }).then((res) => {
             toast.success('Medication records deleted successfully.')
@@ -48,7 +48,7 @@ const UserMedicineList = () =>{
   
   
     useEffect(()=>{
-      fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines").then((res)=>{
+      fetch("http://localhost:8000/AllMedicines").then((res)=>{
         return res.json();
       }).then((resp)=>{
           transactiondatachange(resp);
@@ -100,7 +100,7 @@ const UserMedicineList = () =>{
   useEffect(() => {
     const fetchMedicines = async () => {
       try {
-        const response = await fetch('https://crazy-cod-sweater.cyclic.cloud/AllMedicines');
+        const response = await fetch('http://localhost:8000/AllMedicines');
         if (!response.ok) {
           throw new Error('Failed to fetch medication data.');
         }

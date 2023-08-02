@@ -27,7 +27,7 @@ const Users = () =>{
 
     const Removefunction = (id) => {
     if (window.confirm('Are sure you want to delete this User?')) {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/user/" + id, {
+        fetch("http://localhost:8000/user/" + id, {
             method: "DELETE"
         }).then((res) => {
             toast.success('User deleted successfully.')
@@ -39,7 +39,7 @@ const Users = () =>{
     }
     const Removefunctionadmin = (id) => {
     if (window.confirm('Are sure you want to delete this User?')) {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/admin/" + id, {
+        fetch("http://localhost:8000/admin/" + id, {
             method: "DELETE"
         }).then((res) => {
             toast.success('User deleted successfully.')
@@ -55,7 +55,7 @@ const Users = () =>{
     }*/
 
     useEffect(()=>{
-    fetch("https://crazy-cod-sweater.cyclic.cloud/user").then((res)=>{
+    fetch("http://localhost:8000/user").then((res)=>{
         return res.json();
     }).then((resp)=>{
         userdatachange(resp);
@@ -66,7 +66,7 @@ const Users = () =>{
 
 
     useEffect(()=>{
-    fetch("https://crazy-cod-sweater.cyclic.cloud/admin").then((res)=>{
+    fetch("http://localhost:8000/admin").then((res)=>{
         return res.json();
     }).then((resp)=>{
         admindatachange(resp);

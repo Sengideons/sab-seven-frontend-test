@@ -17,7 +17,7 @@ const ReadInbox = () =>{
     const [itemdata, itemdatachange] = useState({});
 
     useEffect(() => {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines/" + medicineId).then((res) => {
+        fetch("http://localhost:8000/AllMedicines/" + medicineId).then((res) => {
             return res.json();
         }).then((resp) => {
             itemdatachange(resp);

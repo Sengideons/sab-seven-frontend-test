@@ -43,7 +43,7 @@ const MedicationEdit = () =>{
       const handleFormSubmit = async (e) => {
         e.preventDefault();
         const itemdata={id,medicineName,quantity,genericName,date,price};
-        fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines/" + itemid, {
+        fetch("http://localhost:8000/AllMedicines/" + itemid, {
                     method: "PUT",
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(itemdata)
@@ -57,7 +57,7 @@ const MedicationEdit = () =>{
     
     
       useEffect(() => {
-        fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines/" + itemid).then((res) => {
+        fetch("http://localhost:8000/AllMedicines/" + itemid).then((res) => {
             return res.json();
         }).then((resp) => {
             idchange(resp.id);

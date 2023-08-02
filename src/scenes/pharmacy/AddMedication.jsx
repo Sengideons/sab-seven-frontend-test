@@ -24,7 +24,7 @@ const AddMedication = () =>{
   
     const handleFormSubmit = async (values) => {
       const allMedicines=(values);
-      fetch("https://crazy-cod-sweater.cyclic.cloud/AllMedicines", {
+      fetch("http://localhost:8000/AllMedicines", {
                   method: "POST",
                   headers: { 'content-type': 'application/json' },
                   body: JSON.stringify(allMedicines)
@@ -54,7 +54,7 @@ const AddMedication = () =>{
     useEffect(() => {
       const fetchMedicines = async () => {
         try {
-          const response = await fetch('https://crazy-cod-sweater.cyclic.cloud/AllMedicines');
+          const response = await fetch('http://localhost:8000/AllMedicines');
           if (!response.ok) {
             throw new Error('Failed to fetch medication data.');
           }
