@@ -110,7 +110,7 @@ const PharmacySidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  SAB7
+                  <img src="assets/images/admin.png" alt="" style={{height:"100px"}}/>
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Welcome Admin

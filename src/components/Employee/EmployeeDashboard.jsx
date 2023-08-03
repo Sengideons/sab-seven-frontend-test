@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, tokens, useMode } from "../../theme";
-import PharmacyTopbar from '../../scenes/global/PharmacyTopbar';
 import axios from 'axios';
 import EmployeeSidebar from './EmployeeSidebar';
 import PharmacyAnalytics from '../Pharmacy/PharmarcyAnalytics';
+import EmployeeTopbar from './EmployeeTopbar';
 
 
 const EmployeeDashboard = () =>{
@@ -100,7 +100,7 @@ const EmployeeDashboard = () =>{
         <div className="app">
           <EmployeeSidebar />
           <main className="content">
-            <PharmacyTopbar expiredMedicinesCount={unreadCount} />
+            <EmployeeTopbar expiredMedicinesCount={unreadCount} />
             {/* Dashboard Main Body*/}
             <Box m="20px">
             <main class="ttr-wrapper" style={{marginTop: "-100px"}}>

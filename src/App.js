@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import Home from './components/Home/Home';
@@ -22,6 +22,8 @@ import EmployeeHome from './components/Home/EmployeeHome';
 import InboxPage from './components/Notifications/InboxPage';
 import EmployeeAddMedication from './components/Employee/EmployeeAddMedication';
 import UserMedicineList from './components/Employee/UserMedicineList';
+import EmployeeInboxPage from './components/Employee/EmployeeInbox.page';
+import UserMedicineDetailsPage from './components/Employee/EmployeeMedicineDetails.page';
 
 
 function App () {
@@ -54,6 +56,8 @@ function App () {
             <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
             <Route path="/user-add-medication" element={<EmployeeAddMedication />} />
             <Route path="/user-medicine-list" element={<UserMedicineList />} />
+            <Route path="/user-notifications" element={<EmployeeInboxPage />} />
+            <Route path="/user-medicine-list/user-medicine-detail/:medicineid" element={<UserMedicineDetailsPage />} />
 
 
             {/* Clinic Routes*/}

@@ -35,14 +35,14 @@ const MedicationEdit = () =>{
       const[id,idchange]=useState("");
       const[medicineName, medicineNamechange]=useState("");
       const[quantity,quantitychange]=useState("");
-      const[genericName,genericNamechange]=useState("");
+      const[unitQuantity,unitQuantitychange]=useState("");
       const[date,datechange]=useState("");
       const[price,pricechange]=useState("");
     
     
       const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const itemdata={id,medicineName,quantity,genericName,date,price};
+        const itemdata={id,medicineName,quantity,unitQuantity,date,price};
         fetch("http://localhost:8000/AllMedicines/" + itemid, {
                     method: "PUT",
                     headers: { 'content-type': 'application/json' },
@@ -63,7 +63,7 @@ const MedicationEdit = () =>{
             idchange(resp.id);
             medicineNamechange(resp.medicineName);
             quantitychange(resp.quantity);
-            genericNamechange(resp.genericName);
+            unitQuantitychange(resp.unitQuantity);
             datechange(resp.date);
             pricechange(resp.price);
             
@@ -124,14 +124,14 @@ const MedicationEdit = () =>{
                         <TextField
                         fullWidth
                         variant="filled"
-                        type="text"
-                        label="Generic Name"
+                        type="number"
+                        label="unitQuantity"
                         onBlur={handleBlur}
-                        onChange={e=>genericNamechange(e.target.value)}
-                        value={genericName}
-                        name="genericName"
-                        error={!!touched.genericName && !!errors.genericName}
-                        helperText={touched.genericName && errors.genericName}
+                        onChange={e=>unitQuantitychange(e.target.value)}
+                        value={unitQuantity}
+                        name="unitQuantity"
+                        error={!!touched.unitQuantity && !!errors.unitQuantity}
+                        helperText={touched.unitQuantity && errors.unitQuantity}
                         sx={{ gridColumn: "span 2" }}
                         />
                         <TextField
@@ -195,7 +195,7 @@ const MedicationEdit = () =>{
 
 const checkoutSchema = yup.object().shape({
     medicineName: yup.string(),
-    genericName: yup.string(),
+    unitQuantity: yup.string(),
     quantity: yup.string(),
     date: yup.string(),
     price: yup.string(),
@@ -203,7 +203,7 @@ const checkoutSchema = yup.object().shape({
   
   const initialValues = {
       medicineName: "",
-      genericName: "",
+      unitQuantity: "",
       quantity: "",
       date: "",
       price: "",

@@ -3,7 +3,7 @@ import { useMode } from "../../theme";
 import { useNavigate } from "react-router-dom";
 
 
-const Inbox = () =>{
+const EmployeeInbox = () =>{
     const [theme, colorMode] = useMode();
 
     const [medicines, setMedicines] = useState([]);
@@ -188,4 +188,4 @@ const Inbox = () =>{
   );
 }
 
-export default Inbox;
+export default EmployeeInbox;

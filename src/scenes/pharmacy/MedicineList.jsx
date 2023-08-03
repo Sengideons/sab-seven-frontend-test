@@ -66,6 +66,10 @@ const MedicineList = () =>{
 
 
 
+    const sortMedicineListAlphabetically = (data) => {
+      return data.slice().sort((a, b) => a.medicineName.localeCompare(b.medicineName));
+    };
+
 
     const getStatus = (expiryDate) => {
       const currentDate = new Date();
@@ -198,7 +202,7 @@ const MedicineList = () =>{
                             </tr>
                         </thead>
                         <tbody>
-                        {filteredData.map((data) => {
+                        {sortMedicineListAlphabetically(filteredData).map((data) => {
                         const { status, dotColor } = getStatus(data.date);
 
                         return (

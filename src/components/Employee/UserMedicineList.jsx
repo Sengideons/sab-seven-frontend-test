@@ -3,8 +3,6 @@ import { Box, CssBaseline, ThemeProvider, Button, IconButton, Typography } from 
 import { ColorModeContext, tokens, useMode } from "../../theme";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
-import PharmacySidebar from '../../scenes/global/PharmacySidebar';
-import PharmacyTopbar from '../../scenes/global/PharmacyTopbar';
 import { toast } from "react-toastify";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
@@ -12,8 +10,8 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import InfoIcon from '@mui/icons-material/Info';
-import EmployeeRegister from '../SignUp/Register';
 import EmployeeSidebar from './EmployeeSidebar';
+import EmployeeTopbar from './EmployeeTopbar';
 
 
 const UserMedicineList = () =>{
@@ -26,7 +24,7 @@ const UserMedicineList = () =>{
     const navigate = useNavigate();
     
     const LoadDetail = (id) => {
-      navigate("/medicine-list/detail/" + id);
+      navigate("/user-medicine-list/user-medicine-detail/" + id);
   }
 
   const LoadEdit = (id) => {
@@ -66,6 +64,10 @@ const UserMedicineList = () =>{
     }) : null;
 
 
+
+    const sortMedicineListAlphabetically = (data) => {
+      return data.slice().sort((a, b) => a.medicineName.localeCompare(b.medicineName));
+    };
 
 
     const getStatus = (expiryDate) => {
@@ -136,7 +138,7 @@ const UserMedicineList = () =>{
         <div className="app">
           <EmployeeSidebar />
           <main className="content">
-            <PharmacyTopbar expiredMedicinesCount={unreadCount} />  
+            <EmployeeTopbar expiredMedicinesCount={unreadCount} />  
             {/* Medication List Main Body*/}
             <Box m="20px">
             <Box
@@ -169,7 +171,7 @@ const UserMedicineList = () =>{
             justifyContent="right"
             borderRadius="4px"
             >
-            <Link to={"/user-add-medication"}>
+            <Link to={"/add-medication"}>
                 <Button
                 variant="contained"
                 color="secondary"
@@ -199,7 +201,7 @@ const UserMedicineList = () =>{
                             </tr>
                         </thead>
                         <tbody>
-                        {filteredData.map((data) => {
+                        {sortMedicineListAlphabetically(filteredData).map((data) => {
                         const { status, dotColor } = getStatus(data.date);
 
                         return (
